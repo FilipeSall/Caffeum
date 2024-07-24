@@ -1,0 +1,59 @@
+@use '../../styles/Mixin' as *;
+@use '../../styles/variables' as *;
+
+.weather-painel__container {
+    height: 10vh;
+    width: 100%;
+    @include flex(column);
+    margin: 1%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px $c4;
+    object-fit: cover;
+
+    @include mediaCell {
+        display: none;
+    }
+
+    img {
+        border-radius: 12px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .weather-painel__text-conditions {
+        position: absolute;
+        width: 100%;
+        @include show;
+        animation: show .5s ease-in-out forwards;
+        @include flex(row, flex-end, flex-end);
+        font-weight: bold;
+        width: 100%;
+        text-transform: capitalize;
+        display: flex;
+        flex-direction: column;
+        color: $c1;
+        padding:0 8px;
+        align-items: center;
+        justify-content: space-around;
+        height: 10vh;
+        background: rgba(255, 255, 255, 0.523);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        gap: 1px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        p {
+            display: flex;
+            width: 100%;
+            gap: 1px;
+        }
+
+        .weather_icon-painel {
+            width: 7%;
+            object-fit: contain;
+        }
+    }
+}

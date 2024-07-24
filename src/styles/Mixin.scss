@@ -1,0 +1,74 @@
+@mixin flex($row: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $row;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin glassmorphism() {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@mixin mediaCell() {
+    @media screen and (max-width: 678px) {
+        @content;
+    }
+}
+
+@mixin mediatablet() {
+    @media screen and (min-width: 680px) and (max-width: 999px) {
+        @content;
+    }
+}
+
+@mixin laptopMedium() {
+    @media screen and (min-width: 1000px) and (max-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin show() {
+    @keyframes show {
+        0% {
+            opacity: 0;
+            transform: translateX(-2px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+@mixin jump() {
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+@mixin rotate() {
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}

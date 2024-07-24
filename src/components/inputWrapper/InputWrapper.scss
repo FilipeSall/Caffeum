@@ -1,0 +1,39 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/Variables.scss' as *;
+
+
+.admin-input-wrapper{
+    width: 75%;
+    @include flex(column, flex-start, center);
+    @include mediaCell{
+        width: 100%;
+    }
+
+    label{
+        font-size: 1rem;
+        text-align: left;
+        width: 75%;
+    }
+    input{
+        border: 1px solid $c1;
+        border-radius: 4px;
+        height: 5vh;
+        width: 75%;
+        background-color: $c4-2;
+    }
+    .new-fileBtn{
+        border: 1px solid $c1;
+        width: 75%;
+        height: 5vh;
+        border-radius: 4px;
+        background-color: $c4-2;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .form-create_icon{
+        width: 5%;
+    }
+}

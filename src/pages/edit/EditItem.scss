@@ -1,0 +1,87 @@
+@use '../../styles//Mixin.scss' as *;
+@use '../../styles//Variables.scss' as *;
+
+.edit-item__container{
+    height: 100vh;
+    width: 80vw;
+    @include flex;
+}
+
+.edit-item__form{
+    @include flex(column, space-evenly, center);
+    background-color: $c4-2;
+    height: 90vh;
+    width: 90%;
+    border-radius: 4px;
+    color: $c1;
+    gap:1%;
+}
+
+.edit-item__input__wrapper{
+    width: 75%;
+    height: 10vh;
+    @include flex();
+    text-align: right;
+    gap: 12px;
+
+    .edit-item__fileBtn{
+        width: 70%;
+        @include flex(row, flex-start, center);
+        gap: 12px;
+        .editForm-newFile_type__wrapper{
+            width: 100%;
+            text-align: left;
+            @include flex(column, flex-start, flex-start); 
+            p{
+                span{
+                    font-weight: bold;
+                    margin-right: 8px;
+                }
+            }
+        }
+
+    }
+    label{
+        width: 30%;
+        font-family: $fontMontserrat;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-align: left;
+        border-bottom: 2px solid $c1;
+    }
+
+    input, textArea, select{
+        width: 70%;
+        border-radius: 4px;
+        padding: 4px;
+        height: 5vh;
+        font-size: 1.5rem;
+        box-shadow: 0 1px 2px $c1;
+    }
+
+    textArea{
+        height: 15vh;
+    }
+    select{
+        cursor: pointer;
+    }
+
+    img{
+        width: 15%;
+        object-fit: cover;
+        border: 1px solid $c1;
+        border-radius: 50%;
+        background-color: $c4-2;
+        box-shadow: inset 0 2px 3px $c1;
+    }
+
+}
+
+.edit-form__btnWrapper{
+    width: 75%;
+    @include flex();
+    button, a {
+        width: 25%;
+        text-align: center;
+    }
+}

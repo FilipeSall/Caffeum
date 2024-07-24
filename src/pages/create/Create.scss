@@ -1,0 +1,241 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/Variables.scss' as *;
+
+.admin-create__container {
+    height: 100vh;
+    width: 80vw;
+    @include flex;
+
+    @include mediaCell{
+        width: 100vw;
+        min-height: fit-content;
+        height: fit-content;
+    }
+}
+
+.admin-create__form {
+    width: 50vw;
+    height: 90vh;
+    border-radius: 4px;
+    background-color: $c4;
+    color: $c1;
+    font-family: $fontMontserrat;
+    @include flex(column, space-around);
+    box-shadow: 0 0px 5px $c4-2;
+    @include mediaCell{
+        width: 95%;
+    }
+}
+
+.admin-creater__input-wrapper {
+    width: 75%;
+    @include flex(column, flex-start, center);
+
+    label {
+        font-size: 1rem;
+        text-align: left;
+        width: 75%;
+    }
+
+    input {
+        border: 1px solid $c1;
+        border-radius: 4px;
+        height: 5vh;
+        width: 75%;
+        background-color: $c4-2;
+    }
+
+    textArea,
+    select {
+        width: 75%;
+        background-color: $c4-2;
+        border: 1px solid $c1;
+        border-radius: 4px;
+        @include mediaCell{
+            width: 100%;
+        }
+    }
+
+    select {
+        height: 5vh;
+        cursor: pointer;
+        @include show;
+        animation: show .3s ease-in-out forwards;
+        @include mediaCell{
+            width: 100%;
+        }
+    }
+
+    .new-fileBtn {
+        border: 1px solid $c1;
+        width: 75%;
+        height: 5vh;
+        border-radius: 4px;
+        background-color: $c4-2;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        @include mediaCell{
+            width: 100%;
+        }
+    }
+
+    .form-create_icon {
+        width: 5%;
+    }
+
+    .admin-creater__fieldset {
+        width: 75%;
+        @include show;
+        animation: show .3s ease-in-out forwards;
+        transition: .3s ease-in-out;
+        @include flex(row, space-around);
+        @include mediaCell{
+            width: 100%;
+        }
+
+        input {
+            width: 25%;
+            cursor: pointer;
+        }
+
+        div {
+            @include flex(column);
+
+        }
+    }
+
+}
+
+/* btns final form */
+.addLink-btn__wrapper{
+    @include flex(row, space-evenly);
+    width: 75%;
+    a{
+        height: 5vh;
+        @include flex;
+        padding: 4px;
+        border-radius: 4px;
+        font-weight: bold;
+        width: 15%;
+        box-shadow: none;
+        gap: 4px;
+        border-bottom: 2px solid $c1;
+        @include mediaCell{
+            span{
+                display: none;
+            }
+        }
+    }
+}
+.back-arrow__icon{
+    width: 25%;
+    object-fit: cover;
+    @include mediaCell{
+        width: 100%;
+    }
+    @include mediatablet{
+        display: none;
+    }
+}
+
+.addLink-submitBtn {
+    width: 50%;
+    background-color: $c2;
+    height: 5vh;
+    border-radius: 4px;
+    color: $c1;
+    font-weight: bold;
+    border-bottom: 2px solid $c1;
+
+    :active {
+        border-bottom: 0;
+    }
+}
+
+.form-error__message {
+    color: $c3;
+    @include show;
+    animation: show .3s ease-in-out forwards;
+    transition: .3s ease-in-out;
+    margin: 0;
+}
+
+.new-description__count{
+    color:$c5;
+    transition: .3s ease-in-out;
+}
+
+.new-description__count__max{
+    color:$c3;
+    transition: .3s ease-in-out;
+}
+
+.form__sucess__container {
+    font-size: 3rem;
+    color: $c2;
+    width: 100%;
+    height: 100vh;
+    font-weight: bold;
+    @include flex(column, center, center);
+    @include mediaCell{
+        height: 50vh;
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+
+    img {
+        width: 5%;
+        filter: drop-shadow(0px 0px 5px $c2);
+
+        @include jump;
+        animation: jump 5s infinite;
+        @include mediaCell{
+            width: 10%;
+        }
+    }
+
+    a {
+        width: 75%;
+        height: 5vh;
+        @include flex(row, center, center);
+        gap: 12px;
+        text-shadow: 0 0 5px $c2;
+        @include mediaCell{
+            width: 100%;
+        }
+    }
+}
+
+.sucess-info__wrapper {
+    font-size: 1rem;
+    background-color: $c4;
+    margin: 5%;
+    width:50%;
+    @include flex(column);
+    color: $c1;
+    padding: 24px;
+    border-radius: 4px;
+    p{
+        width: 100%;
+    }
+    a{
+        width: 100%;
+        
+    }
+
+    @include mediaCell{
+        height: 100%;
+        width: 90%;
+        @include flex(column);
+        p{
+            width: 100%;
+            height: 5vh;
+            @include flex(row, space-around);
+            font-size: 0.9rem;
+        }
+    }
+}
+
+

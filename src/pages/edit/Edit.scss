@@ -1,0 +1,115 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/Variables.scss' as *;
+
+.edit-container {
+    height: 100%;
+    width: 80vw;
+    @include flex(column);
+
+    @include mediaCell {
+        width: 100%;
+    }
+}
+
+.edit-select__wrapper {
+    width: 80%;
+    height: 25vh;
+    gap: 24px;
+    margin: 2%;
+    @include flex(row, center);
+
+    @include mediaCell {
+        margin: 0;
+    }
+
+    img {
+        width: 10%;
+        object-fit: cover;
+        filter: drop-shadow(0 0px 10px $c2);
+
+        @include mediaCell {
+            display: none;
+        }
+    }
+
+    .loadingIcon {
+        @include rotate;
+        animation: rotate 0.7s ease-in-out infinite;
+    }
+
+    .edit-select__textWrapper {
+        width: 50%;
+        font-size: 2rem;
+        @include flex(column, flex-start, flex-start);
+        gap: 12px;
+        select {
+            border-radius: 4px;
+            width: 100%;
+            padding: 2px;
+            cursor: pointer;
+            color: $c1;
+            background-color: $c4-2;
+            font-weight: bold;
+
+            @include mediaCell {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.edit-content__container {
+    height: 75vh;
+    @include flex(row, space-evenly, flex-start);
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.edit-content__container::-webkit-scrollbar{
+    width: 2px;
+}
+
+.edit-content__container::-webkit-scrollbar-thumb{
+    background-color: $c3;
+}
+
+.edit-links__wrapper {
+    @include flex(row, space-between);
+    flex-wrap: wrap;
+    gap: 32px;
+    width: 80%;
+    background-color: $c4;
+    padding: 12px;
+}
+
+.edit-link__button {
+    width: 20%;
+    @include flex(column, space-around);
+    height: 10vh;
+    background-color: $c2;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: $c1;
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 1px $c1;
+
+    img {
+        width: 15%;
+
+    }
+
+    @include mediaCell {
+        width: 45%;
+    }
+}
+
+.edit-link__button:hover > img {
+    @include jump;
+    animation: jump 1.5s ease-in-out infinite;
+}
+
+.edit-link__button_txtLarge{
+    font-size: 0.9rem;
+}

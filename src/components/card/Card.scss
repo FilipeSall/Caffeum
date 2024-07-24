@@ -1,0 +1,97 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.card {
+    width: 30%;
+    height: 50vh;
+    @include flex(column, flex-start);
+    border-radius: 8px;
+    padding: 12px;
+    gap: 12px;
+    @include show;
+    animation: show .3s ease-in-out forwards;
+    transition: .3s ease-in-out;
+    @include glassmorphism;
+
+    @include mediaCell {
+        width: 100%;
+        height: fit-content;
+    }
+
+    @include mediatablet {
+        width: 45%;
+        height: 55vh;
+    }
+
+    .card-logo__img {
+        height: 10vh;
+        object-fit: cover;
+        filter: drop-shadow(0 0 5px $c1);
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        color: $c4;
+
+        @include mediatablet {
+            font-size: 1.5rem;
+        }
+        @include laptopMedium{
+            font-size: 1.2rem;
+        }
+    }
+
+    .card-description {
+        height: 15vh;
+        width: 100%;
+        text-align: start;
+        font-family: $fontMontserrat;
+
+        @include mediaCell {
+            height: fit-content;
+        }
+
+        @include mediatablet {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.card-type__wrapper {
+    border-radius: 8px;
+    margin-top: auto;
+    padding: 12px;
+    color: $c1;
+    background-color: $c5;
+
+    @include mediatablet {
+        height: 7vh;
+        @include flex;
+    }
+
+    p {
+        @include flex(row, flex-start);
+        gap: 4px;
+        width: 100%;
+
+        @include mediatablet {
+            font-size: 0.8rem;
+            @include flex;
+        }
+
+        @include laptopMedium{
+            font-size: 0.7rem;
+        }
+
+        img {
+            width: 10%;
+        }
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 10px $c2;
+}

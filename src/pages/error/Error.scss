@@ -1,0 +1,18 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/Variables.scss' as *;
+
+.error-container{
+    width: 80%;
+    height: inherit;
+    gap: 24px;
+    @include flex;
+    img{
+        width: 10%;
+        filter: drop-shadow(0 0 5px $c3);
+    }
+    p{
+        font-size: 2rem;
+        color: $c3;
+        font-weight: bold;
+    }
+}

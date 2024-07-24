@@ -1,0 +1,131 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/Variables.scss' as *;
+
+.modal-container {
+    position: absolute;
+    width: 50%;
+    border: 1px solid rgb(118, 194, 175);
+    height: 70vh;
+    background-color: $c1;
+    margin-top: 50%;
+    z-index: 999;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap: 24px;
+    box-shadow: 0 0 5px #76c2af;
+    @include mediaCell{
+        width: 90%;
+        height: 75vh;
+        margin-top: 90%;
+    }
+    @include mediatablet{
+        width: 90%;
+        height: 80vh;
+        margin-top: 100%;
+    }
+
+    @include laptopMedium{
+        margin-top: 65%;
+        width: 85%;
+    }
+}
+
+.modal-container::-webkit-scrollbar {
+    width: 8px;
+    background-color: $c1-2;
+    border-radius: 12px;
+}
+
+.modal-container::-webkit-scrollbar-thumb {
+    background-color: rgb(118, 194, 175);
+    border-radius: 12px 0 0 12px;
+}
+
+.modalBtnACtive {
+    color: $c1;
+    font-weight: bolder;
+    background-color: $c2-2;
+    font-weight: 0.8rem;
+}
+
+.modal-dropdown__item {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    color: $c4;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    gap: 4px;
+    @include mediaCell{
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+}
+
+.modal-dropdown__item>img {
+    width: 6%;
+    @include mediaCell{
+        width: 15%;
+    }
+}
+
+.modalActive {
+    animation: show .4s ease-in-out forwards;
+}
+
+.modalInactve {
+    animation: hidden .4s ease-in-out forwards;
+}
+
+.closeBtn {
+    width: 6%;
+    margin-left: auto;
+    filter: drop-shadow(0 0 2px $c3);
+    position: sticky;
+    top: 0;
+
+    @include mediatablet{
+        width: 10%;
+    }
+    @include mediaCell{
+        width:15%;
+    }
+}
+
+.closeBtn>img {
+    width: 100%;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hidden {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+        transform: translateY(-20px);
+    
+    }
+}

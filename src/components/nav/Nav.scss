@@ -1,0 +1,19 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.navbar-container {
+    height: 100vh;
+    width: 20%;
+    @include flex(column, $justify:flex-start);
+    background-color: $c1-2;
+    padding: 8px;
+    gap: 12px;
+    box-shadow: 5px 5px 25px $c1-2;
+
+    @include mediaCell{
+        height: 20vh;
+        width: 100%;
+        gap: 4px;
+        flex-direction: row;
+    }
+}

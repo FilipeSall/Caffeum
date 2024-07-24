@@ -1,0 +1,23 @@
+@use '../../styles/Mixin.scss' as *;
+
+.loading-container{
+    width: 80vw;
+    height: 50%;
+    gap: 12px;
+    @include flex;
+    
+    img{
+        width: 10%;
+        opacity: 0.1;
+        animation: rotate 1s ease-in-out infinite;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
