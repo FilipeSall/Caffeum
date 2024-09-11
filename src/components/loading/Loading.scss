@@ -10,6 +10,13 @@
         width: 10%;
         opacity: 0.1;
         animation: rotate 1s ease-in-out infinite;
+        @include mediaCell{
+            width: 50%;
+        }
+
+        @include mediatablet{
+            width: 25%;
+        }
     }
 }
 

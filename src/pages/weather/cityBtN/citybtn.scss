@@ -1,0 +1,31 @@
+@use '../../../styles/Variables.scss' as *;
+@use '../../../styles/Mixin.scss' as *;
+
+.setup-city__btn {
+    width: 25%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    transition: .1s ease-in-out;
+
+    @include mediaCell{
+        width: 30%;
+    }
+}
+
+.setup-city__btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    filter: drop-shadow( 0px 4px 2px $c1);
+    border: 6px solid $c4;
+}
+
+.setup-city__btn:active {
+    transform: scale(0.9);
+    transition: .1s ease-in-out;
+}

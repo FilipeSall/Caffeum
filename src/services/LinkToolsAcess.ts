@@ -9,14 +9,19 @@ export const getLinks = async (
 
     let collectionRef: Query<DocumentData> = collection(db, data);
 
-    if (lastDoc) {
-        collectionRef = query(collection(db, data), orderBy('title'), startAfter(lastDoc), limit(number));
+    if (number === -1) {
+        // Consulta todos os documentos
+        collectionRef = query(collection(db, data), orderBy('title'));
     } else {
-        collectionRef = query(collection(db, data), orderBy('title'), limit(number));
+        // Consulta um número específico de documentos
+        if (lastDoc) {
+            collectionRef = query(collection(db, data), orderBy('title'), startAfter(lastDoc), limit(number));
+        } else {
+            collectionRef = query(collection(db, data), orderBy('title'), limit(number));
+        }
     }
 
     const querySnapshot = await getDocs(collectionRef);
-
     const lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
     const linksToolsDocs: DocumentData[] = querySnapshot.docs.map(doc => doc.data());
 
@@ -35,7 +40,6 @@ export const getLinksId = async (data: string) => {
     }
     catch (error) {
         console.error(`Nao foi possível acessar ao documento: ${error}`);
-        throw error;
     }
 }
 

@@ -1,0 +1,68 @@
+@use '../../styles/Mixin.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.delete-container {
+    width: 80vw;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.delete-container__header{
+    width: 100%;
+    height: 20vh;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.delete-container__header select{
+    width: 25%;
+    border-radius: 4px;
+    height: 5vh;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.background-offFocus{
+    opacity: 0.3;
+}
+
+.delete-links_wrapper{
+    width: 100%;
+    display: flex;
+    min-height: 80vh;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+}
+
+.delete-btn_link {
+    width: 20%;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: $c4-2;
+    margin: 12px;
+    box-shadow: 0 4px 2px $c5;
+    gap: 4px;
+    transition: box-shadow .3s ease-in-out;
+}
+
+.delete-btn_link:hover{
+    box-shadow: 0 4px 2px $c3-2;
+}
+
+.delete-btn_link>img {
+    width: 15%;
+}
+
+.delete-btn_link:active{
+    box-shadow: none;
+    transform: translateY(1px);
+}

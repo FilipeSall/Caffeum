@@ -1,0 +1,40 @@
+@use '../../../styles/Mixin.scss' as *;
+@use '../../../styles/Variables.scss' as *;
+
+h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    color: $c4;
+    font-family: 'Open Sans';
+    max-width: 80%;
+    text-shadow: 0 1px 3px $c1;
+
+    @include mediatablet {
+        font-size: 1.3rem;
+    }
+    @include laptopMedium{
+        font-size: 1.2rem;
+    }
+}
+
+.card-long_text{
+    font-size: 1.7rem;
+}
+
+.card-long_text_more{
+    font-size: 1.6rem;
+    @include mediatablet{
+        font-size: 1rem;
+    }
+}
+
+.card-super-long_text{
+    font-size: 1.4rem;
+    @include mediaCell{
+        font-size: 1.2rem;
+    }
+    @include mediatablet{
+        font-size: 0.9rem;
+    }
+}

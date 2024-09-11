@@ -20,6 +20,8 @@ import interfaceIcon from '../assets/icons/interface.svg';
 import securityIcon from '../assets/icons/security.svg';
 import seoIcon from '../assets/icons/seo.svg';
 import wordpressIcon from '../assets/icons/wordpress.svg';
+import iaDesignWebIcon from '../assets/icons/websitegenerator.svg';
+import ferramentasMarketing from '../assets/icons/marketing.svg';
 
 export const toolsTypesOptions = [
     {
@@ -123,6 +125,18 @@ export const toolsTypesOptions = [
         text: 'Aprimora a visibilidade e a classificação de um site nos motores de busca',
         icon: seoIcon,
         value: 'seo',
+    },
+    {
+        title: 'IA de Design Web',
+        text: 'Inteligência artificial que gera sites e elementos de UI',
+        icon: iaDesignWebIcon,
+        value: 'iaweb',
+    },
+    {
+        title: 'Ferramentas de Marketing',
+        text: 'Ferramentas para influenciadores e profissionais de marketing',
+        icon: ferramentasMarketing,
+        value: 'marketing',
     },
 ]
 

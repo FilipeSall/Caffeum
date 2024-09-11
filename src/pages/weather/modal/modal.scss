@@ -1,0 +1,40 @@
+@use '../../../styles/Variables.scss' as *;
+@use '../../../styles/Mixin.scss' as *;
+
+.weather-page_modal {
+    margin-top: 4px;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: $c4;
+    border: 1px solid $c1;
+    padding: 4px;
+    animation: show .2s ease-out forwards ;
+    position: relative;
+    box-shadow: 0 2px 5px $c1;
+}
+
+.weather-page_modal::-webkit-scrollbar{
+    width: 10%;
+}
+
+.weather-page_nocityfounded_text{
+    color: $c5;
+    font-size: 1.1rem;
+    padding: 12px;
+    animation:show .6s ease-in-out forwards;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

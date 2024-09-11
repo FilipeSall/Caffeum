@@ -1,9 +1,10 @@
-import WeatherPainel from '../weatherPainel/WeatherPainel';
 import './Nav.scss';
 import NavigationLink from './NavigationLink/NavigationLink';
 import catalogIcon from '../../assets/icons/links.svg';
 import adminIcon from '../../assets/icons/admin.svg';
 import studyIcon from '../../assets/icons/study.svg';
+import climateIcon from '../../assets/icons/climate.svg';
+import Videologo from './videologo/Videologo';
 
 function Nav() {
 
@@ -12,6 +13,11 @@ function Nav() {
             path:'/',
             text:'Links',
             icon:catalogIcon,
+        },
+        {
+            path:'/weather',
+            text:'Clima',
+            icon:climateIcon,
         },
         {
             path:'/study',
@@ -27,7 +33,7 @@ function Nav() {
 
     return (
             <nav className='navbar-container'>
-                <WeatherPainel />
+                <Videologo />
                     {navLinks.map((navlink,i)=> (
                         <NavigationLink
                         key={i}

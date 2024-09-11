@@ -1,22 +1,17 @@
-
 import { useEffect, useState } from 'react';
 import './WeatherPainel.scss';
 import { getWeather } from './GetWeatherFunction';
 import GetIconWeather from './GetImgFunction';
-import temperatureIcon from '../../assets/icons/temperature.svg';
-import humidityIcon from '../../assets/icons/humidity.svg';
-import weatherIcon from '../../assets/icons/weather.svg';
-
-interface Weather {
-    weather: { description: string, }[];
-    main: { temp: number, humidity: number };
-
-}
+import { NavLink, useLocation } from 'react-router-dom';
+import { WeatherProps } from '../../Global/Types';
+import Timer from './Timer';
 
 function WeatherPainel() {
 
-    const [weather, setWeater] = useState<Weather>();
-    const [hover, setHover] = useState(false);
+    const location = useLocation();
+
+    const [weather, setWeater] = useState<WeatherProps>();
+    const [active, setActive] = useState<boolean>(false);
 
     useEffect(() => {
         const fetchHandleData = async () => {
@@ -27,24 +22,41 @@ function WeatherPainel() {
         fetchHandleData()
     }, [])
 
+    useEffect(() => {
+        setActive(location.pathname === '/weather');
+    }, [location.pathname]);
+
+    const handleMouseEnter = () => {
+        if (!active) {
+            setActive(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (location.pathname !== '/weather') {
+            setActive(false);
+        }
+    };
+
     const weatherCondition = weather?.weather[0].description;
 
     return (
-        <div className={`weather-painel__container`} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <NavLink to='/weather' className={`weather-painel__container`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             {weather &&
                 <>
                     {weatherCondition && GetIconWeather(weatherCondition)}
-                    {hover &&
+                    {active &&
                         <div className='weather-painel__text-conditions'>
-                            <p className='weatherCondition-text'><img src={weatherIcon} className='weather_icon-painel' />{weatherCondition}</p>
-                            <p><img src={humidityIcon} className='weather_icon-painel' /> {weather.main.humidity}</p>
-                            <p><img src={temperatureIcon} className='weather_icon-painel' /> {weather.main.temp}°</p>
+                            {<Timer />}
                         </div>
                     }
                 </>
             }
 
-        </div>
+        </NavLink>
     )
 }
 

@@ -13,7 +13,7 @@
     object-fit: cover;
 
     @include mediaCell {
-        display: none;
+
     }
 
     img {
@@ -24,7 +24,6 @@
 
     .weather-painel__text-conditions {
         position: absolute;
-        width: 100%;
         @include show;
         animation: show .5s ease-in-out forwards;
         @include flex(row, flex-end, flex-end);
@@ -32,8 +31,10 @@
         width: 100%;
         text-transform: capitalize;
         display: flex;
+        align-items: center;
         flex-direction: column;
         color: $c1;
+        text-align: center;
         padding:0 8px;
         align-items: center;
         justify-content: space-around;
@@ -45,8 +46,19 @@
         gap: 1px;
         border: 1px solid rgba(255, 255, 255, 0.18);
 
-        p {
+        @include mediaCell{
+            font-size: 0.8rem;
+        }
+
+        @include mediatablet{
+            gap:0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        div h1 {
             display: flex;
+            font-size: 2rem;
             width: 100%;
             gap: 1px;
         }
@@ -54,6 +66,13 @@
         .weather_icon-painel {
             width: 7%;
             object-fit: contain;
+            @include mediatablet{
+                width: 10%;
+            }
+
+            @include mediaCell{
+                width: 5%;
+            }
         }
     }
 }

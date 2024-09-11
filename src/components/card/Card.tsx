@@ -3,6 +3,7 @@ import { LinksToolsProps, OptionsTypes } from '../../Global/Types';
 import { Link } from 'react-router-dom';
 
 import { toolsTypesOptions, depenciesTypesOptions } from '../../Global/typesOptions';
+import Title from './title/Title';
 
 function Card({ description, icon, title, types, path }: LinksToolsProps) {
 
@@ -20,8 +21,10 @@ function Card({ description, icon, title, types, path }: LinksToolsProps) {
 
     return (
         <Link to={`${path}`} target='_blank' className={`card`}>
-            <img src={icon} alt={title} className={`card-logo__img`} />
-            <h1>{title}</h1>
+            <div className='card-img_wrapper'>
+                <img src={icon} alt={title} className={`card-logo__img`} />
+                <Title title={title} />
+            </div>
             <p className='card-description'>{description}</p>
             <div className={`card-type__wrapper`}>
                 {types.map((type, i) => (

@@ -1,0 +1,29 @@
+@use '../../../../styles/Variables.scss' as *;
+@use '../../../../styles/Mixin.scss' as *;
+
+
+.weather-page__input{
+    height: 50.8px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid $c1;
+    box-shadow: 0 2px 5px $c1;
+    background-color: $c4;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    align-items: center;
+}
+
+.weather-page__input :where(input){
+    width: 100%;
+    padding: 8px;
+    height: 48px;
+    background-color: $c4;
+    color: #757575;
+    overflow: hidden;
+}

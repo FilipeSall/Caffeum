@@ -12,6 +12,7 @@ function Edit() {
     const [bigType, setBigType] = useState('ferramentas');
     const [loading, setLoading] = useState(false);
     const [links, setLinks] = useState<EditLinkProps[]>([]);
+    const [searchTerm, setSearchTerm] = useState<string>("");
 
     useEffect(() => {
         const dataFecth = async () => {
@@ -19,7 +20,7 @@ function Edit() {
             try {
                 const datas = await getLinksId(bigType);
                 if (datas) {
-                    const linksList: EditLinkProps[] = []; 
+                    const linksList: EditLinkProps[] = [];
                     datas.forEach(link => {
                         linksList.push({
                             title: link.data().title,
@@ -28,7 +29,7 @@ function Edit() {
                             types: link.data().types,
                             path: link.data().path,
                             id: link.id,
-                            bigType:''
+                            bigType: ''
                         });
                     });
 
@@ -52,10 +53,12 @@ function Edit() {
         if (value === 'frameworks' && !loading) {
             return frameworksIcon
         }
-        if(loading){
+        if (loading) {
             return loadingIcon
         }
     }
+
+    const searchedTerm = links.filter(link => link.title.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <>
@@ -70,20 +73,22 @@ function Edit() {
                         </select>
                     </div>
                 </div>
-                    <div className='edit-content__container'>
-                        {!loading &&
-                            <div className='edit-links__wrapper'>
-                                {links && links.map((link, i) => (
-                                    <NavLink key={i} to={`/admin/${link.id}`} className={`edit-link__button`}>
-                                        <img src={link.icon} alt={link.title} />
-                                        <p className={`${link.title.length > 10 ? 'edit-link__button_txtLarge' : 'edit-link__button_txtNormal'}`}>{link.title}</p>     
-                                    </NavLink>
-                                ))}
-                            </div>}
-                    </div>
+
+                <input className='edit-content_input' type='text' placeholder='Pesquise pelo nome' id='edit-content_input' onChange={(e) => setSearchTerm(e.target.value)} />
+
+                <div className='edit-content__container'>
+                    {!loading &&
+                        <div className='edit-links__wrapper'>
+                            {searchedTerm.length > 0 ? links && searchedTerm.map((link, i) => (
+                                <NavLink key={i} to={`/admin/${link.id}`} className={`edit-link__button`}>
+                                    <img src={link.icon} alt={link.title} />
+                                    <p className={`${link.title.length > 10 ? 'edit-link__button_txtLarge' : 'edit-link__button_txtNormal'}`}>{link.title}</p>
+                                </NavLink>
+                            )) : <p className='edit-links_nolinktext'>Nenhum link com esse nome.</p>}
+                        </div>}
+                </div>
             </div>
         </>
-
     )
 }
 

@@ -1,0 +1,49 @@
+@use '../../../styles/Mixin.scss' as *;
+@use '../../../styles/variables.scss' as *;
+
+.modal-delete_wrapper {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 20vh;
+    background-color: $c4;
+    color: $c1;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.modal-delete_text__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-delete_text__wrapper span {
+    font-weight: bolder;
+}
+
+.modal-delete_text__wrapper img {
+    width: 5%;
+    filter: drop-shadow(0 0 1px $c1);
+}
+
+.modal-delete_btn__wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.modal-delete_btn__wrapper button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}

@@ -23,21 +23,23 @@
     background-color: #76C2AF;
     border: 2px solid $c4;
     cursor: pointer;
-    
+
 
     @include mediatablet {
         width: 6%;
     }
+
     @include mediaCell {
         width: 12%;
     }
-    @include laptopMedium{
+
+    @include laptopMedium {
         width: 5%;
     }
 
 }
 
-.header-home_icon:active{
+.header-home_icon:active {
     box-shadow: none;
     border: 1px solid #76C2AF;
     transition: .3s ease-in-out;
@@ -56,7 +58,8 @@
     animation: show 0.9s forwards ease-in-out;
 
     @include mediatablet {
-        width: 15%;
+        width: 13%;
+        top: 7%;
     }
 
     @include laptopMedium {
@@ -69,12 +72,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding:0 2rem;
+    padding: 0 2rem;
     align-items: center;
-    margin: 12px 0 ;
+    margin: 12px 0;
 
-    @include mediaCell{
-       padding: 0 1rem;
+    @include mediaCell {
+        padding: 0 1rem;
     }
 
     input {
@@ -84,7 +87,7 @@
         border: 1px solid $c2;
         box-shadow: 0 0px 10px $c2;
         padding: 4px;
-
+        background-color: $c4;
     }
 
     select {
@@ -111,6 +114,15 @@
     }
 }
 
+.no-results-message{
+    font-size: 2rem;
+    animation: show .5s ease-in-out;
+    text-align: center;
+    width: 100%;
+    font-family: 'Open Sans';
+    color: $c5;
+}
+
 /*CSS do container dos cards */
 
 .home-content__container {
@@ -121,7 +133,7 @@
     background-color: $c1;
     overflow-y: scroll;
     border-top: 10px dotted $c1-2;
-    gap: 36px;
+    gap: 44px;
 
     @include mediaCell {
         height: fit-content;
@@ -133,12 +145,9 @@
     }
 }
 
-
-
 .home-content__container::-webkit-scrollbar-thumb {
     background-color: $c3;
     border-radius: 12px;
-
 }
 
 .home-content__container::-webkit-scrollbar {
@@ -155,11 +164,12 @@
     animation: rotate 0.7s ease-in-out forwards;
 }
 
-.observerTarget{
+.observerTarget {
     width: 30%;
-    height: 30px;
-    margin-Top: auto;
-    @include mediatablet{
+    height: 170px;
+    margin-top: -90px;
+
+    @include mediatablet {
         width: 45%;
     }
 

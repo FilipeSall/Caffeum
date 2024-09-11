@@ -4,17 +4,18 @@
 .admin-container {
     width: 80vw;
     height: 100vh;
-    @include flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
     @include show;
     animation: show .3s ease-in-out forwards;
 
     @include mediaCell {
         flex-direction: column;
         width: 100%;
-        justify-content: flex-start;
         height: fit-content;
     }
-
 
     .admin-form {
         width: 75%;
@@ -27,9 +28,9 @@
 
         @include mediaCell {
             width: 100%;
-            padding: 12px
+            padding: 12px;
+            height:50vh;
         }
-
 
         .admin-input__wrapper {
             @include flex(column);
@@ -84,42 +85,81 @@
 
 .logged-section__container {
     width: 100%;
-    height: inherit;
     font-family: $fontMontserrat;
-    @include flex(row, flex-start);
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 4px;
 
     @include mediaCell {
         flex-direction: column;
+
     }
 
     @include mediatablet {
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 12px;
+        padding: 24px 0px;
         height: fit-content;
+        
     }
 
 }
 
+.logged-section_linkssection{
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 8px;
+    border:1px solid $c5;
+    transition: .5s ease-in-out;
+    color: $c5;
+    margin: 2rem 0;
+    @include mediaCell{
+        width: 300px;
+    }
+    @include mediatablet{
+        margin: 1rem 0;
+    }
+}
+
 .logged-section__navlink {
     font-size: 2rem;
+    border-radius: 8px;
+    transition: .5s ease-in-out;
+    padding: 4px;
     @include flex(column);
-    width: 35%;
+    width: 30%;
     color: $c4;
     font-weight: bold;
-    height: 25%;
 
     @include mediaCell {
         width: 100%;
+        font-size: 0.7rem;
     }
 
     @include mediatablet {
         width: 50%;
         height: 25vh;
+        font-size: 1.5rem;
     }
+}
+
+.logged-section__navlink:hover{
+    background-color: $c1-2;
+    transition: .5s ease-in-out;
 }
 
 .logged-secction_nav__img {
     width: 25%;
+    @include mediaCell {
+        width: 50px;
+    }
+    @include mediatablet{
+        width: 60px;
+    }
 }

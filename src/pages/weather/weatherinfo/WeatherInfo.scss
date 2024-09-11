@@ -1,0 +1,111 @@
+@use '../../../styles/Variables.scss' as *;
+@use '../../../styles/Mixin.scss' as *;
+
+.weather-page__wrapper {
+    width: 50vw;
+    height: 90vh;
+    border-radius: 8px;
+    position: relative;
+    user-select: none;
+    color: $c1;
+    border: 1px solid $c5;
+
+    @include mediaCell {
+        width: 100vw;
+    }
+
+    @include mediatablet {
+        width: 75vw;
+    }
+}
+
+.weatherWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+.weatherImg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px $c1;
+}
+
+.weatherAnimation {
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.weatherInfo {
+    display: flex;
+    height: 90%;
+    width: 70%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    gap: 12px;
+    @include mediaCell{
+        width: 98%;
+        margin-top: 30px;
+    }
+}
+
+.weatherInfo-fieldsets_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cityName {
+    font-family: 'Glitch';
+    text-shadow: 0 1px 5px $c1;
+}
+
+.cityName-normal_length{
+    font-size: 4rem;
+    @include mediaCell{
+        font-size: 2.5rem;
+    }
+    @include mediatablet{
+        font-size: 2.8rem;
+    }
+
+}
+
+.cityName-large_length{
+    font-size: 3.9rem;
+    @include mediaCell{
+        font-size: 2.2rem;
+    }
+    @include mediatablet{
+        font-size: 2.6rem;
+    }
+}
+
+.cityName-superlarge_length{
+    font-size: 3.5rem;
+    @include mediaCell{
+        font-size: 2rem;
+    }
+    @include mediatablet{
+        font-size: 2.4rem;
+    }
+}

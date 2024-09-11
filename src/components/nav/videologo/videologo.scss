@@ -1,0 +1,15 @@
+@use '../../../styles/Mixin.scss' as *;
+@use '../../../styles/variables.scss' as *;
+
+
+.nav-video{
+    width: 105%;
+    height: 15vh;
+    object-fit: cover;
+    box-shadow: 0 0px 15px $c1;
+
+    @include mediaCell{
+        height: 20vh;
+        object-position: center;
+    }
+}

@@ -66,6 +66,16 @@
     overflow-y: scroll;
 }
 
+.edit-content_input{
+    width: 50%;
+    height: 5vh;
+    border-radius: 4px;
+    background-color: $c4;
+    padding: 4px;
+    margin-left: -30%;
+    margin-bottom: 12px;
+}
+
 .edit-content__container::-webkit-scrollbar{
     width: 2px;
 }
@@ -78,6 +88,8 @@
     @include flex(row, space-between);
     flex-wrap: wrap;
     gap: 32px;
+    border-radius: 4px;
+    background-color: $c4;
     width: 80%;
     background-color: $c4;
     padding: 12px;
@@ -112,4 +124,8 @@
 
 .edit-link__button_txtLarge{
     font-size: 0.9rem;
+}
+
+.edit-links_nolinktext{
+    color: $c1;
 }

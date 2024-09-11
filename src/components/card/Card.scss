@@ -3,7 +3,7 @@
 
 .card {
     width: 30%;
-    height: 50vh;
+    height: 45vh;
     @include flex(column, flex-start);
     border-radius: 8px;
     padding: 12px;
@@ -20,28 +20,8 @@
 
     @include mediatablet {
         width: 45%;
-        height: 55vh;
-    }
-
-    .card-logo__img {
-        height: 10vh;
-        object-fit: cover;
-        filter: drop-shadow(0 0 5px $c1);
-    }
-
-    h1 {
-        font-weight: bold;
-        font-size: 2rem;
-        width: 100%;
-        text-align: center;
-        color: $c4;
-
-        @include mediatablet {
-            font-size: 1.5rem;
-        }
-        @include laptopMedium{
-            font-size: 1.2rem;
-        }
+        height: 45vh;
+        padding: 15px;
     }
 
     .card-description {
@@ -55,9 +35,29 @@
         }
 
         @include mediatablet {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
     }
+}
+
+.card-img_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-radius: 8px;
+    padding: 4px;
+
+    @include mediatablet {
+        gap: 4px;
+    }
+}
+
+.card-logo__img {
+    height: 7vh;
+    width: 20%;
+    filter: drop-shadow(0 0 5px $c1);
+    object-fit: contain;
 }
 
 .card-type__wrapper {
@@ -66,6 +66,7 @@
     padding: 12px;
     color: $c1;
     background-color: $c5;
+    width: 100%;
 
     @include mediatablet {
         height: 7vh;
@@ -82,12 +83,16 @@
             @include flex;
         }
 
-        @include laptopMedium{
+        @include laptopMedium {
             font-size: 0.7rem;
         }
 
         img {
             width: 10%;
+
+            @include mediatablet {
+                width: 15%;
+            }
         }
     }
 }

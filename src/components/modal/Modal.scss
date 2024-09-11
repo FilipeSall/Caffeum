@@ -70,6 +70,14 @@
 
 }
 
+.modal-btn_text_normal{
+font-size: 1rem;
+}
+
+.modal-btn_text_long{
+    font-size: 0.9rem;
+}
+
 .modal-dropdown__item>img {
     width: 6%;
     @include mediaCell{
@@ -93,7 +101,7 @@
     top: 0;
 
     @include mediatablet{
-        width: 10%;
+        width: 7%;
     }
     @include mediaCell{
         width:15%;

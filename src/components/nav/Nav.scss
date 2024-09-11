@@ -11,9 +11,11 @@
     box-shadow: 5px 5px 25px $c1-2;
 
     @include mediaCell{
-        height: 20vh;
+        height: 40vh;
         width: 100%;
         gap: 4px;
+        align-items: center;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 }

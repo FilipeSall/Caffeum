@@ -8,7 +8,7 @@ function NavigationLink({ path, text, icon }: NavigationLinkProps) {
             <>
                 <NavLink to={path} className={`navlink`}>
                     {icon && <img src={icon} alt={`${text} icon`} />}
-                    {text}
+                    <p>{text}</p>
                 </NavLink>
             </>
     )

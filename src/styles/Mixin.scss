@@ -72,3 +72,34 @@
         }
     }
 }
+
+
+// Mixin para o tema claro
+@mixin light-theme {
+    --c1: #{color(c1, light)};
+    --c1-2: #{color(c1-2, light)};
+    --c2: #{color(c2, light)};
+    --c2-2: #{color(c2-2, light)};
+    --c3: #{color(c3, light)};
+    --c3-2: #{color(c3-2, light)};
+    --c4: #{color(c4, light)};
+    --c4-2: #{color(c4-2, light)};
+    --c5: #{color(c5, light)};
+    --c5-2: #{color(c5-2, light)};
+    --c6: #{color(c6, light)};
+}
+
+// Mixin para o tema escuro
+@mixin dark-theme {
+    --c1: #{color(c1, dark)};
+    --c1-2: #{color(c1-2, dark)};
+    --c2: #{color(c2, dark)};
+    --c2-2: #{color(c2-2, dark)};
+    --c3: #{color(c3, dark)};
+    --c3-2: #{color(c3-2, dark)};
+    --c4: #{color(c4, dark)};
+    --c4-2: #{color(c4-2, dark)};
+    --c5: #{color(c5, dark)};
+    --c5-2: #{color(c5-2, dark)};
+    --c6: #{color(c6, dark)};
+}

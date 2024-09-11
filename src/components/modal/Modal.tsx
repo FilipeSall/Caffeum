@@ -33,7 +33,7 @@ function Modal({ bigType, setModal, modal, filterType, setFilterType, parentRef 
             <button
                 type='button'
                 className={`${filterType[0] === '' && 'modalBtnACtive'} modal-dropdown__item`}
-                onClick={() => {setFilterType(['']); setModal(false)}}
+                onClick={() => { setFilterType(['']); setModal(false) }}
             >
                 <img src={allicon} alt={'Todos'} />
                 <p>Todos</p>
@@ -43,10 +43,10 @@ function Modal({ bigType, setModal, modal, filterType, setFilterType, parentRef 
                     key={i}
                     className={`${item.value === filterType[0] && 'modalBtnACtive'} modal-dropdown__item`}
                     type='button'
-                    onClick={() => {setFilterType([item.value]);setModal(false);}}
+                    onClick={() => { setFilterType([item.value]); setModal(false); }}
                 >
-                    <img src={item.icon} alt={item.title}  />
-                    <p>{item.text}</p>
+                    <img src={item.icon} alt={item.title} />
+                    <p className={item.text.length > 70 ? 'modal-btn_text_long' : 'modal-btn_text_normal'}>{item.text}</p>
                 </button>
             ))}
         </section>

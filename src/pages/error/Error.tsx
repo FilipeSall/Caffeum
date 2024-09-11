@@ -1,12 +1,19 @@
 import './Error.scss';
-import errorIcon from '../../assets/icons/error.svg';
+import errorImg from '../../assets/imgs/error404.webp';
+import Seo from '../../components/seo/Seo';
 
 function Error() {
     return (
-        <div className={`error-container`}>
-            <img alt='Algo deu errado' src={errorIcon} />
-            <p>Algo deu errado!</p>
-        </div>
+        <>
+            <Seo
+                title='404 | Página não encontrada'
+                description='Desculpa, mas não encontramos esta página.'
+            />
+            <div className={`error-container`}>
+                <img src={errorImg} alt='Error 404' />
+                <p>Desculpe, a página que você está procurando não existe.</p>
+            </div>
+        </>
     )
 }
 
